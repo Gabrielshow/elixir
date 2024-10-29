@@ -1,7 +1,7 @@
-defmodule Checkout do
+defmodule Practice.Checkout do
     def total_cost(price, tax_rate) do
     price * (tax_rate + 1)
     end
 end
 
-Checkout.total_cost(20, 1)
+Practice.Checkout.total_cost(100, 0.2)
