@@ -3,11 +3,13 @@ defmodule Practice.Array.LeftShiftArray do
     length = length(arr)
     shift_amount= rem(positions, length)
 
-    if shift_amount < 0 do
-      shift_amount = length + shift_amount
+    adjusted_shift_amount = if shift_amount < 0 do
+      length + shift_amount
+    else
+      shift_amount
     end
 
-    Enum.drop(arr, shift_amount) ++ Enum.take(arr, shift_amount)
+    Enum.drop(arr, adjusted_shift_amount) ++ Enum.take(arr, adjusted_shift_amount)
   end
 end
 
